@@ -1,0 +1,20 @@
+{% extends "master.html" %}
+{% block title %}
+  All Tours
+{% endblock title %}
+
+{% block content %}
+    <h1>Welcome to the tours!</h1>
+
+    <p><a href="/">HOME</a></p>
+
+
+    <ul>
+        {% for tour in all_tours %}
+            <li><a href="details/{{tour.id}}">Title: {{ tour.title }}. Description: {{ tour.description }}.</a></li>
+        {% empty %}
+            <li>No tours yet</li>
+        {% endfor %}
+    </ul>
+{% endblock content %}
+    
